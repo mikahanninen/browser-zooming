@@ -1,10 +1,14 @@
 # Readme
 
+Tested on Chrome and Firefox browsers on Windows 10, Ubuntu 20.04 and MacOS 11.3.1
+
 ## how to run
 
-The tool `rcc` is used to manage Python environment defined by `conda.yaml`
+The tool [rcc](https://github.com/robocorp/rcc) is used to manage Python environment defined by `conda.yaml`
 
-`> rcc run`
+```bash
+> rcc run
+```
 
 ## disclaimer
 
