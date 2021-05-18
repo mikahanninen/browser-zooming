@@ -3,7 +3,7 @@ Library           RPA.Browser.Selenium
 Library           zoomer.py
 
 *** Variables ***
-@{BROWSERS}       chrome    firefox    opera
+@{BROWSERS}       chrome    firefox
 
 *** Keywords ***
 Open Site With Selected Browser
@@ -12,7 +12,6 @@ Open Site With Selected Browser
     ...    Open Available Browser
     ...    ${site_url}
     ...    browser_selection=${browser}
-    ...    headless=True
     Return From Keyword If    not $status
     Report Browser Window Inner Size
     ${totalzoom}=    Do Some Zooming In and Out
@@ -24,9 +23,9 @@ Do Some Zooming In and Out
     FOR    ${idx}    IN RANGE    10
         ${zoomfactor}=    Evaluate    random.randint(1,4)
         IF    $idx % 2 == 0
-            ${zoomvalue}=    Zooming    up    ${zoomfactor}
+        ${zoomvalue}=    Zooming    up    ${zoomfactor}
         ELSE
-            ${zoomvalue}=    Zooming    down    ${zoomfactor}
+        ${zoomvalue}=    Zooming    down    ${zoomfactor}
         END
         ${totalzoom}=    Evaluate    ${totalzoom}+${zoomvalue}
         Report Browser Window Inner Size
